@@ -118,6 +118,13 @@ docker start -ai bevfusion-original
 ```
 
 * You can directly re-run evaluations or training as required inside this container.
+  
+## Outputs
+
+The model evaluates:
+
+* **3D object detection** using fused **6-camera and LiDAR inputs**.
+* Metrics include **NDS**, **mAP**, error metrics, and per-class results.
 
 ---
 
@@ -181,13 +188,6 @@ torchpack dist-run -np 1 python tools/train.py \
   --model.encoders.camera.backbone.init_cfg.checkpoint pretrained/swint-nuimages-pretrained.pth \
   --load_from pretrained/lidar-only-det.pth
 ```
-
-## Outputs
-
-The model evaluates:
-
-* **3D object detection** using fused **6-camera and LiDAR inputs**.
-* Metrics include **NDS**, **mAP**, error metrics, and per-class results.
 
 ---
 
