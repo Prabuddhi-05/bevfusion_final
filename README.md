@@ -109,16 +109,6 @@ torchpack dist-run -np 1 python tools/test.py \
 exit
 ```
 
-## Subsequent runs (Reuse container)
-
-* Restart and reuse your named container without data loss:
-
-```bash
-docker start -ai bevfusion-original
-```
-
-* You can directly re-run evaluations or training as required inside this container.
-  
 ## Outputs
 
 The model evaluates:
@@ -188,7 +178,15 @@ torchpack dist-run -np 1 python tools/train.py \
   --model.encoders.camera.backbone.init_cfg.checkpoint pretrained/swint-nuimages-pretrained.pth \
   --load_from pretrained/lidar-only-det.pth
 ```
+## Subsequent runs (Reuse container)
 
+* Restart and reuse your named container without data loss:
+
+```bash
+docker start -ai bevfusion-original
+```
+
+* You can directly re-run evaluations or training as required inside this container.
 ---
 
 For detailed framework documentation, visit [BEVFusion GitHub](https://github.com/mit-han-lab/bevfusion).
