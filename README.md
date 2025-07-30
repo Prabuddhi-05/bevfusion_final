@@ -1,7 +1,7 @@
 
 # BEVFusion Framework Setup and Execution
 
-This repository provides setup instructions and usage guidelines for running the BEVFusion framework for **3D Object Detection using LiDAR and Multi-view Camera Fusion in the Bird's Eye View** inside Docker. It is based on the `dev/fusion-configs` branch of the [original BEVFusion repository by MIT HAN Lab](https://github.com/mit-han-lab/bevfusion).
+This repository provides setup instructions and usage guidelines for running the BEVFusion framework for **3D Object Detection using LiDAR and Multi-view Camera Fusion in the Bird's Eye View** inside Docker. It is based on the [original BEVFusion repository by MIT HAN Lab](https://github.com/mit-han-lab/bevfusion).
 
 ---
 
