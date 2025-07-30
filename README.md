@@ -26,7 +26,7 @@ docker build -t bevfusion_original .
 ```bash
 docker run --gpus all -it \
   --name bevfusion-original \
-  -v "/home/prabuddhi/bevfusion_original:/home/bevfusion" \
+  -v "/home/prabuddhi/bevfusion_final:/home/bevfusion" \
   -v "/media/prabuddhi/Crucial X91/bevfusion-main/data/nuscenes:/dataset" \
   --shm-size=16g \
   bevfusion_original /bin/bash
