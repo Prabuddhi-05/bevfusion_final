@@ -169,7 +169,7 @@ pip install mmcv-full==1.4.0 -f https://download.openmmlab.com/mmcv/dist/cu113/t
 ```
 
 
-# **Run Training**
+### **5. Run training**
 
 To start training with pre-trained checkpoints:
 ```bash
