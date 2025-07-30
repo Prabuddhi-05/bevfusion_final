@@ -59,7 +59,7 @@ ln -s /dataset ./data/nuscenes # Create a symbolic link to connect the dataset o
 conda install numpy=1.23.5 -y
 ```
 
-### 5. Create swap memory (Prevents crashes)
+### 5. Create swap memory (Prevents crashes) (Optional)
 
 * Check memory usage (optional):
 
