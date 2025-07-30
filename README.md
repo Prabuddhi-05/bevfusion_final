@@ -121,6 +121,72 @@ docker start -ai bevfusion-original
 
 ---
 
+# **Additional setup for Training**
+
+Run the following additional steps to fix common issues:
+
+---
+
+### **1. Install yapf**
+```bash
+pip install yapf==0.30.0
+```
+
+---
+
+### **2. Set PyTorch distributed environment**
+```bash
+export MASTER_HOST=localhost
+export MASTER_PORT=29500
+```
+
+---
+
+### **3. Fix TensorBoard import issue**
+
+Edit:
+```bash
+nano /opt/conda/envs/bevfusion/lib/python3.8/site-packages/torch/utils/tensorboard/__init__.py
+```
+
+Replace content with:
+```python
+import tensorboard
+try:
+    from setuptools._distutils.version import LooseVersion
+except ImportError:
+    from distutils.version import LooseVersion  # fallback for older setups
+
+if not hasattr(tensorboard, '__version__') or LooseVersion(tensorboard.__version__) < LooseVersion('1.15'):
+    raise ImportError('TensorBoard logging requires TensorBoard version 1.15 or above')
+
+del LooseVersion
+del tensorboard
+
+from .writer import FileWriter, SummaryWriter  # noqa: F401
+from tensorboard.summary.writer.record_writer import RecordWriter  # noqa: F401
+```
+
+---
+
+### **4. Fix MMCV version**
+```bash
+pip uninstall mmcv-full -y
+pip install mmcv-full==1.4.0 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
+```
+
+---
+
+# **Run Training**
+
+To start training with pre-trained checkpoints:
+```bash
+torchpack dist-run -np 1 python tools/train.py \
+  configs/nuscenes/det/transfusion/secfpn/camera+lidar/swint_v0p075/convfuser.yaml \
+  --model.encoders.camera.backbone.init_cfg.checkpoint pretrained/swint-nuimages-pretrained.pth \
+  --load_from pretrained/lidar-only-det.pth
+```
+
 ## Outputs
 
 The model evaluates:
