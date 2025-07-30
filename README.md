@@ -125,14 +125,12 @@ docker start -ai bevfusion-original
 
 Run the following additional steps to fix common issues:
 
----
 
 ### **1. Install yapf**
 ```bash
 pip install yapf==0.30.0
 ```
 
----
 
 ### **2. Set PyTorch distributed environment**
 ```bash
@@ -140,7 +138,6 @@ export MASTER_HOST=localhost
 export MASTER_PORT=29500
 ```
 
----
 
 ### **3. Fix TensorBoard import issue**
 
@@ -167,7 +164,6 @@ from .writer import FileWriter, SummaryWriter  # noqa: F401
 from tensorboard.summary.writer.record_writer import RecordWriter  # noqa: F401
 ```
 
----
 
 ### **4. Fix MMCV version**
 ```bash
@@ -175,7 +171,6 @@ pip uninstall mmcv-full -y
 pip install mmcv-full==1.4.0 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
 ```
 
----
 
 # **Run Training**
 
