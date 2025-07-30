@@ -33,7 +33,7 @@ docker run --gpus all -it \
 ```
 
 * Replace the path with the actual dataset directory path on the host machine.
-* You can clone this repository from [https://github.com/Prabuddhi-05/bevfusion_original.git](https://github.com/Prabuddhi-05/bevfusion_final.git).
+* You can clone this repository from [https://github.com/Prabuddhi-05/bevfusion_final.git](https://github.com/Prabuddhi-05/bevfusion_final.git).
 * Attach to this container via VS Code:
   * Ctrl + Shift + P → Attach to an existing container
 
