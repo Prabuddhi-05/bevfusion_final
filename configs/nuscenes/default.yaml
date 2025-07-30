@@ -267,8 +267,8 @@ test_pipeline:
     keyframe_only: true 
 
 data:
-  samples_per_gpu: 1 # 4 Changed 
-  workers_per_gpu: 2 # 1 Changed 
+  samples_per_gpu: 4
+  workers_per_gpu: 4
   train:
     type: CBGSDataset
     dataset:
