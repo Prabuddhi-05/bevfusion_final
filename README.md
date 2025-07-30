@@ -29,7 +29,7 @@ docker run --gpus all -it \
   -v "/home/prabuddhi/bevfusion_final:/home/bevfusion" \
   -v "/media/prabuddhi/Crucial X91/bevfusion-main/data/nuscenes:/dataset" \
   --shm-size=16g \
-  bevfusion_original /bin/bash
+  bevfusion_final /bin/bash
 ```
 
 * Replace the path with the actual dataset directory path on the host machine.
@@ -183,7 +183,7 @@ torchpack dist-run -np 1 python tools/train.py \
 * Restart and reuse your named container without data loss:
 
 ```bash
-docker start -ai bevfusion-original
+docker start -ai bevfusion-final
 ```
 
 * You can directly re-run evaluations or training as required inside this container.
